@@ -1,7 +1,7 @@
 final class Config {
   Config._();
   static const mailContact = 'mrouhi444@gmail.com';
-  static const String appName = 'Phantom VPN';
+  static const String appName = 'Spartan VPN';
   static const version = '1.0';
   static const company = 'Plaxylorix';
   static const bundleId = 'free.vpn.Plaxylorix.PhantomVPN';

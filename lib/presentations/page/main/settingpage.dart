@@ -19,19 +19,19 @@ class _SettingPageState extends State<SettingPage> {
     return Scaffold(
       backgroundColor: const Color(0xff1c1d21),
       appBar: AppBar(
-        leading: GestureDetector(
-            onTap: () {
-              Navigator.pop(context);
-            },
-            child: const Icon(
-              Icons.arrow_back_ios_new_outlined,
-              color: Color(0xffffff00),
-            )),
+        // leading: GestureDetector(
+        //     onTap: () {
+        //       Navigator.pop(context);
+        //     },
+        //     child: const Icon(
+        //       Icons.arrow_back_ios_new_outlined,
+        //       color: Color(0xffffff00),
+        //     )),
         automaticallyImplyLeading: false,
         title: const Text(
           'Setting',
           style: TextStyle(
-              color: Color(0xffffff00),
+              color: Colors.white,
               fontSize: 20,
               fontWeight: FontWeight.w600),
         ),

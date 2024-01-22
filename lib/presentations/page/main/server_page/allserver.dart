@@ -118,8 +118,8 @@ class _AllServerState extends State<AllServer> {
                   ?Assets.images.crown.image(height: 25)
                   : isSelected
                       ? Icon(
-                          Icons.offline_pin_rounded,
-                          color: Color(0xffffff00),
+                          Icons.check_circle_outline_rounded,
+                          color: Colors.white,
                         )
                       : Icon(
                           Icons.radio_button_unchecked,

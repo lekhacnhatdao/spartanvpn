@@ -38,27 +38,10 @@ class _HistoryPageState extends State<HistoryPage> {
     return Scaffold(
       backgroundColor: Color(0xff1c1d21),
       appBar: AppBar(
-        leading: TextButton(
-          onPressed: () {
-            Navigator.pop(context);
-          },
-          child: Icon(
-            Icons.arrow_back_ios_new_outlined,
-            color: Color(0xffffff00),
-          ),
-        ),
-        backgroundColor: Colors.transparent,
-        automaticallyImplyLeading: false,
-        centerTitle: true,
-        title: const AppTitleText(
-          text: 'History',
-          color: Color(0xffffff00),
-        ),
-        actions: [
-          TextButton(
+      leading:  TextButton(
             child: isHistoryNotEmpty == true
-                ? Assets.icons.icCrown.svg()
-                : const Icon(Icons.delete, color: Color(0xffffff00)),
+                ? SizedBox()
+                : const Icon(Icons.delete, color: Colors.white),
             onPressed: () {
               if (isHistoryNotEmpty == true) {
                 _deleteAllConfirmationDialog();
@@ -66,7 +49,16 @@ class _HistoryPageState extends State<HistoryPage> {
                 EasyLoading.showToast('History connection list is empty');
               }
             },
-          )
+          ),
+        backgroundColor: Colors.transparent,
+        
+        centerTitle: true,
+        title: const AppTitleText(
+          text: 'History',
+          color: Colors.white,
+        ),
+        actions: [
+         
         ],
       ),
       body: Container(
@@ -234,9 +226,10 @@ margin: EdgeInsets.symmetric(horizontal: 10),
       margin: const EdgeInsets.symmetric(horizontal: 5, vertical: 10),
       decoration: BoxDecoration(
         borderRadius: const BorderRadius.all(Radius.circular(15)),
-        border: Border.all(width: 1, color: Color(0xffffff00)),
+        border: Border.all(width: 1, color: Colors.white),
       ),
       child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
           SizedBox(
             child: Container(
@@ -248,9 +241,7 @@ margin: EdgeInsets.symmetric(horizontal: 10),
               ),
             ),
           ),
-          SizedBox(
-            width: 5,
-          ),
+        
           Column(
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -259,13 +250,10 @@ margin: EdgeInsets.symmetric(horizontal: 10),
                 color: Colors.white,
                 text: '${server.country}',
               ),
-              Text(
-                'City:  ${server.city}',
-                style: TextStyle(color: Colors.white),
-              )
+             
             ],
           ),
-          Spacer(),
+       
           AppBodyText(
             text: history.createAt.toStringFormatted(),
             size: 12,

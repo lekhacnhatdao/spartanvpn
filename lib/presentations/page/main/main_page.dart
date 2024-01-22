@@ -24,7 +24,7 @@ class _MainPageState extends State<MainPage> with TickerProviderStateMixin {
   void initState() {
     super.initState();
 
-    controller = TabController(length: 5, vsync: this);
+    controller = TabController(length: 3, vsync: this);
   }
 
   @override
@@ -37,21 +37,22 @@ class _MainPageState extends State<MainPage> with TickerProviderStateMixin {
               widget: Scaffold(
                 
                 appBar: AppBar(
+                  bottom: TabBar(
+                    indicatorColor:  Color(0xfffe920e),
+labelColor:const Color(0xfffe920e),
+                    dividerColor: Colors.transparent,
+                    indicatorSize: TabBarIndicatorSize.label
+                   , controller: controller, tabs: const [
+                    Icon(Icons.home),
+                    Icon(Icons.access_alarm_rounded),
+                    Icon(Icons.settings_rounded)
+                  ]),
                   actions: [
                     
-                    const SizedBox(width: 10,),
-                    GestureDetector(onTap: (){
-                      Navigator.push(context, MaterialPageRoute(builder: (_) => const SettingPage()));
-                    } ,child: const Icon(Icons.settings_rounded, color: Color(0xffffff00),),),
-                    const SizedBox(width: 10,), 
+                   
                   ],
                   backgroundColor: Color(0xff1c1d21),
-                  leading: GestureDetector(
-                      onTap: (){
-                        Navigator.push(context, MaterialPageRoute(builder: (_) =>const HistoryPage()));
-                      },
-                      child: const Icon(Icons.access_time_outlined, color: Color(0xffffff00)),
-                    ),
+                  automaticallyImplyLeading: false,
                   centerTitle: true,
                   title:  Row(
                     mainAxisAlignment: MainAxisAlignment.center,
@@ -59,7 +60,7 @@ class _MainPageState extends State<MainPage> with TickerProviderStateMixin {
                      
                        const SizedBox(width: 3,),
                       Text('${ Config.appName.split(';').last}'  ,
-                        style: const TextStyle(color: Color(0xffffff00)),
+                        style: const TextStyle(color: Colors.white),
                       ),
                     ],
                   ),
@@ -85,8 +86,14 @@ class _MainPageState extends State<MainPage> with TickerProviderStateMixin {
                   //   },
                   // )
                 ),
-                body: 
-                          const VpnPage(),
+                body: TabBarView(controller:  controller, children: 
+                [
+ const VpnPage(),
+ HistoryPage(),
+ SettingPage()
+                ]
+                )
+                         
 
                       
                     

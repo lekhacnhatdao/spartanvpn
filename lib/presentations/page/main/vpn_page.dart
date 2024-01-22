@@ -6,7 +6,6 @@ import 'package:openvpn/presentations/bloc/app_cubit.dart';
 import 'package:openvpn/presentations/bloc/app_state.dart';
 import 'package:openvpn/presentations/page/main/server_page/server_page.dart';
 import 'package:openvpn/presentations/route/app_router.gr.dart';
-import 'package:openvpn/presentations/widget/impl/Animatetioncheck.dart';
 import 'package:openvpn/presentations/widget/impl/Customprenium.dart';
 import 'package:openvpn/presentations/widget/impl/app_thapgiac_text.dart';
 import 'package:openvpn/presentations/widget/index.dart';
