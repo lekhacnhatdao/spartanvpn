@@ -11,17 +11,17 @@
   },
   "servers": [
     {
-      "ip": "147.189.131.15",
-      "country": "Netherlands",
-      "countryCode": "NL",
-      "region": "North Holland",
-      "city": "Amsterdam",
-      "timezone": "Europe\/Amsterdam",
-      "lat": "52.3109",
-      "lon": "4.9453",
-      "zip": "1101",
-      "ovpn": "assets/opvn/fr_client_141.94.149.105.ovpn",
-      "flag": "assets/flags/NL.png",
+      "ip": "103.68.109.108",
+      "country": "Singapore",
+      "countryCode": "SG",
+      "region": "North West",
+      "city": "Singapore",
+      "timezone": "Asia\/Singapore",
+      "lat": "1.35208",
+      "lon": "103.82",
+      "zip": "858877",
+      "ovpn": "assets/opvn/sg_client_103.68.109.108.ovpn",
+      "flag": "assets/flags/SG.png",
       "vpn": {
         "table": [
           "1",
@@ -31,6 +31,28 @@
         "free": true
       }
     },
+    {
+      "ip": "198.244.174.163",
+      "country": "Spain",
+      "countryCode": "ES",
+      "region": "Madrid",
+      "city": "Madrid",
+      "timezone": "Europe\/Madrid",
+      "lat": "40.4186",
+      "lon": "-3.7323",
+      "zip": "28008",
+      "ovpn": "assets/opvn/us_client_50.114.12.12.ovpn",
+      "flag": "assets/flags/ES.png",
+      "vpn": {
+        "table": [
+          "1",
+          "2",
+          "3"
+        ],
+        "free": false
+      }
+    },
+    
     {
       "ip": "165.154.227.209",
       "country": "Taiwan",
@@ -159,26 +181,27 @@
       }
     },
     {
-      "ip": "165.154.240.192",
-      "country": "South Korea",
-      "countryCode": "KR",
-      "region": "Seoul",
-      "city": "Seoul",
-      "timezone": "Asia\/Seoul",
-      "lat": "0",
-      "lon": "0",
-      "zip": "",
-      "ovpn": "assets/opvn/kr_client_165.154.240.116.ovpn",
-      "flag": "assets/flags/KR.png",
+      "ip": "147.189.131.15",
+      "country": "Netherlands",
+      "countryCode": "NL",
+      "region": "North Holland",
+      "city": "Amsterdam",
+      "timezone": "Europe\/Amsterdam",
+      "lat": "52.3109",
+      "lon": "4.9453",
+      "zip": "1101",
+      "ovpn": "assets/opvn/fr_client_141.94.149.105.ovpn",
+      "flag": "assets/flags/NL.png",
       "vpn": {
         "table": [
           "1",
           "2",
           "3"
         ],
-        "free": false
+        "free": true
       }
     },
+   
     {
       "ip": "51.75.187.111",
       "country": "Italy",
@@ -202,27 +225,7 @@
     },
    
     
-    {
-      "ip": "103.68.109.108",
-      "country": "Singapore",
-      "countryCode": "SG",
-      "region": "North West",
-      "city": "Singapore",
-      "timezone": "Asia\/Singapore",
-      "lat": "1.35208",
-      "lon": "103.82",
-      "zip": "858877",
-      "ovpn": "assets/opvn/sg_client_103.68.109.108.ovpn",
-      "flag": "assets/flags/SG.png",
-      "vpn": {
-        "table": [
-          "1",
-          "2",
-          "3"
-        ],
-        "free": true
-      }
-    },
+  
  
     {
       "ip": "165.154.225.33",
@@ -309,6 +312,27 @@
       }
     },
     {
+      "ip": "165.154.240.192",
+      "country": "South Korea",
+      "countryCode": "KR",
+      "region": "Seoul",
+      "city": "Seoul",
+      "timezone": "Asia\/Seoul",
+      "lat": "0",
+      "lon": "0",
+      "zip": "",
+      "ovpn": "assets/opvn/kr_client_165.154.240.116.ovpn",
+      "flag": "assets/flags/KR.png",
+      "vpn": {
+        "table": [
+          "1",
+          "2",
+          "3"
+        ],
+        "free": false
+      }
+    },
+    {
       "ip": "165.154.234.46",
       "country": "Nigeria",
       "countryCode": "NG",
@@ -326,30 +350,10 @@
           "2",
           "3"
         ],
-        "free": true
+        "free": false
       }
     },
-    {
-      "ip": "198.244.174.163",
-      "country": "Spain",
-      "countryCode": "ES",
-      "region": "Madrid",
-      "city": "Madrid",
-      "timezone": "Europe\/Madrid",
-      "lat": "40.4186",
-      "lon": "-3.7323",
-      "zip": "28008",
-      "ovpn": "assets/opvn/us_client_50.114.12.12.ovpn",
-      "flag": "assets/flags/ES.png",
-      "vpn": {
-        "table": [
-          "1",
-          "2",
-          "3"
-        ],
-        "free": true
-      }
-    },
+   
     {
       "ip": "141.94.149.109",
       "country": "Portugal",

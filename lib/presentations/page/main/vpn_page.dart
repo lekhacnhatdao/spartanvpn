@@ -145,7 +145,7 @@ class _VpnPageState extends State<VpnPage> {
             body: Column(
               children: [
                 const SizedBox(
-                  height: 10,
+                  height: 20,
                 ),
 const Custompretimum(),
                 // Container(
@@ -322,19 +322,20 @@ const Custompretimum(),
                 const SizedBox(
                   height: 20,
                 ),
-                 Assets.images.router.image(height: 50),
+               
                 Container(
                   height: 50,
                   width: double.infinity,
                   margin: const EdgeInsets.symmetric(horizontal: 20),
                   decoration: const BoxDecoration(
-                      color: Color(0xff020202),
+                      color: Colors.transparent,
                       borderRadius: BorderRadius.all(Radius.circular(10)),
                   ),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                    
+                      Assets.images.router.image(height: 35),
+                      const SizedBox(width: 10,),
                       Text(
                         'IP:  ${state.currentServer?.ip}',
                         style: const TextStyle(color: Colors.white, fontSize: 20),
@@ -355,7 +356,7 @@ Container(
                   child: TextButton(
                       onPressed: () {
                         
-                            Navigator.push(context, MaterialPageRoute(builder: (_) =>ServerPage()))    ;
+                            Navigator.push(context, MaterialPageRoute(builder: (_) =>const ServerPage()))    ;
                       },
                       style: TextButton.styleFrom(
                         minimumSize: const Size(0, 60),
@@ -421,7 +422,7 @@ Container(
                     Container(
                       padding: const EdgeInsets.all(5),
                       decoration: const BoxDecoration(
-                          color: Color(0xff020202),
+                          color: Colors.transparent,
                           borderRadius: BorderRadius.all(Radius.circular(10))),
                       child: const Icon(Icons.arrow_downward_rounded,
                           color: Color(0xfffe920e)),
@@ -481,7 +482,7 @@ Container(
                       Container(
                         padding: const EdgeInsets.all(5),
                         decoration: const BoxDecoration(
-                            color: Color(0xff020202),
+                            color: Colors.transparent,
                             borderRadius:
                                 BorderRadius.all(Radius.circular(10))),
                         child: const Icon(

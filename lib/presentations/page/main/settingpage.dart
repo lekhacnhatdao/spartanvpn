@@ -55,7 +55,7 @@ class _SettingPageState extends State<SettingPage> {
           // ignore: lines_longer_than_80_chars
           SettingListTile(
             title: 'Feedback',
-            svgWidget: const Icon(Icons.sms, color: Colors.white),
+            svgWidget: const Icon(Icons.insert_comment, color: Colors.white),
             onPressed: () {
               showDialog(
                 context: context,
@@ -88,7 +88,7 @@ class _SettingPageState extends State<SettingPage> {
           // ignore: lines_longer_than_80_chars
           SettingListTile(
             title: 'Privacy Policy',
-            svgWidget: const Icon(Icons.shield, color: Colors.white),
+            svgWidget: const Icon(Icons.security_rounded, color: Colors.white),
             onPressed: () {
               // ignore: lines_longer_than_80_chars
               Navigator.push(context,
@@ -151,7 +151,7 @@ class SettingListTile extends StatelessWidget {
         Container(
           margin: const EdgeInsets.symmetric(horizontal: 15, vertical: 10),
           decoration: const BoxDecoration(
-            color: Colors.white,
+            color: Colors.transparent,
             // boxShadow: [
             //   BoxShadow(
             //     color: Colors.black.withOpacity(0.1),
@@ -164,13 +164,12 @@ class SettingListTile extends StatelessWidget {
           child: ListTile(
             onTap: onPressed,
             leading: Container(
-                padding: const EdgeInsets.all(10),
-                decoration: const BoxDecoration(
-                    color: Color(0xffFB5607), shape: BoxShape.circle),
+               
+                  
                 child: svgWidget),
             title: Text(
               title,
-              style: const TextStyle(fontSize: 14, color: Colors.black),
+              style: const TextStyle(fontSize: 14, color: Colors.white),
             ),
             trailing: InkWell(
                 // ignore: lines_longer_than_80_chars
@@ -187,13 +186,22 @@ class SettingListTile extends StatelessWidget {
                             ),
                             child: const Text(
                               'Try now',
-                              style: TextStyle(color: Colors.black),
+                              style: TextStyle(color: Colors.white),
                             ),
                           )
-                        : const Icon(
-                            Icons.arrow_forward_rounded,
-                            color: Colors.black,
-                          )),
+                        : Container(
+                          padding: EdgeInsets.all(5),
+                          decoration: BoxDecoration(
+                            color: Colors.transparent,
+
+                          borderRadius: BorderRadius.all(Radius.circular(10))
+                          ),
+                          
+                          child: const Icon(
+                              Icons.arrow_forward_ios_rounded,
+                              color: Colors.white,
+                            ),
+                        )),
           ),
         ),
       ],

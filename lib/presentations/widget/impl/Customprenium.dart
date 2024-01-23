@@ -25,7 +25,7 @@ class _CustompretimumState extends State<Custompretimum> {
             image: DecorationImage(
                 image: Assets.images.bgPre.image().image, fit: BoxFit.cover),
             color: Colors.white,
-            borderRadius: const BorderRadius.all(Radius.circular(20))),
+            borderRadius: const BorderRadius.all(Radius.circular(16))),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
@@ -39,24 +39,26 @@ class _CustompretimumState extends State<Custompretimum> {
                 ),
                 const SizedBox(height: 10,),
                 Container(
-                  padding: const EdgeInsets.symmetric(horizontal: 5, vertical: 3),
+                  padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
                   decoration: const BoxDecoration(
                       color: Colors.amber,
-                      borderRadius: BorderRadius.all(Radius.circular(10))),
+                      borderRadius: BorderRadius.all(Radius.circular(20))),
                   child: const Row(
                     children: [
 
                       Text(
                         'Go Premium',
                         style: TextStyle(
-                            color: Colors.pink,
+                            color: Colors.white,
                             fontWeight: FontWeight.w700,
-                            fontSize: 20),
+                            fontSize: 14),
                       ),
                       SizedBox(width: 5,),
                        Icon(
               Icons.arrow_forward_rounded,
               color: Colors.white,
+              size: 14
+              ,
             ),
                     ],
                   ),

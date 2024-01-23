@@ -7,7 +7,7 @@ class AppButtons extends StatelessWidget {
     super.key,
     required this.text,
     this.icon,
-    this.backgroundColor = AppColors.accent,
+    this.backgroundColor = Colors.transparent,
     this.onPressed,
     this.margin,
     this.height = 52,
@@ -57,7 +57,7 @@ class AppButtons extends StatelessWidget {
       );
     }
     return Container(
-    decoration: BoxDecoration(color: Color(0xff5cffd1), borderRadius: BorderRadius.all(Radius.circular(25))),
+    decoration: BoxDecoration(color: Colors.transparent, borderRadius: BorderRadius.all(Radius.circular(25))),
       margin: margin,
       child: ConstrainedBox(
         constraints: BoxConstraints.tightFor(

@@ -28,7 +28,7 @@ class _RatingDialogState extends State<RatingDialog> {
         margin: EdgeInsets.symmetric(horizontal: MediaQuery.of(context).size.width/10, vertical: MediaQuery.of(context).size.height/4),
                  decoration: const BoxDecoration(
                   borderRadius: BorderRadius.all(Radius.circular(20)),
-                      color: Color(0xffffff00),
+                      color: Colors.white,
                  ),
     
          child: Column(
@@ -97,7 +97,7 @@ class _RatingDialogState extends State<RatingDialog> {
                       padding: const EdgeInsets.all(5.0),
                       child: i <= _rating
                           ? 
-                          const Icon(Icons.star, color:Colors.red ,size: 50,) :  Icon(Icons.star, color: Colors.black.withOpacity(0.1),size: 50,),
+                          const Icon(Icons.star, color:Colors.amber ,size: 50,) :  Icon(Icons.star, color: Colors.black.withOpacity(0.1),size: 50,),
                     ),
                   ),
               ],

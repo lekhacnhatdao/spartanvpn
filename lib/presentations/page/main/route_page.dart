@@ -29,7 +29,7 @@ class AgreePrivacyPage extends StatelessWidget {
                   SizedBox(height: screenHeight * 0.1),
                   const PrivacyPolicyItem(
                     'Privacy and security',
-                    '\nEnjoy tranquility: Protect your personal information, maintain security, and preserve your data indefinitely.',
+                    '\nExperience serenity: Safeguard your personal details, uphold security, and retain your data indefinitely."',
                   ),
                   SizedBox(height: screenHeight * 0.1,),
                  const $AssetsImagesGen().security.image(height: 200),
@@ -48,7 +48,7 @@ class AgreePrivacyPage extends StatelessWidget {
                       margin: const EdgeInsets.symmetric(horizontal: 10),
                       decoration:  const BoxDecoration(
                         borderRadius:  BorderRadius.all(Radius.circular(10)),
-                       color: Color(0xffffff00)
+                       color: Color(0xfffe920e)
                       ),
                         child: const Align(child: Text("Accept and continue", style: TextStyle(color: Colors.black),)) ,
                      

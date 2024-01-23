@@ -34,14 +34,14 @@ class _PremiumPageState extends State<PremiumPage> {
             },
             child: const Icon(
               Icons.clear,
-              color: Color(0xffffff00),
+              color: Colors.white,
             ),
           ),
           centerTitle: true,
           title: const AppTitleText(
             textAlign: TextAlign.center,
             text: Strings.benefitsOfThePremium,
-            color: Color(0xffffff00),
+            color: Colors.white,
           ),
         ),
         body: BlocBuilder<AppCubit, AppState>(
@@ -69,9 +69,9 @@ class _PremiumPageState extends State<PremiumPage> {
                         const Align(
                             alignment: Alignment.topLeft,
                             child: Text(
-                              'Key Features of Premium Access:',
+                              'Special service package:',
                               style: TextStyle(
-                                  color: Color(0xffffff00),
+                                  color: Colors.white,
                                   fontSize: 15,
                                   fontWeight: FontWeight.w600),
                             )),
@@ -106,8 +106,9 @@ class _PremiumPageState extends State<PremiumPage> {
                           height: 20,
                         ),
                         const Text(
-                          "Please be aware that your access to our services will be automatically renewed and charged to your designated payment method on record. This process will occur unless you take explicit action to cancel your subscription at least 24 hours prior to the expiration of the current billing cycle. To ensure you have full control over your ongoing subscription and to make any necessary adjustments, we encourage you to visit and review your Account Settings following your purchase. Here, you can manage your payment options, explore different subscription plans, and update your personal preferences to enhance your experience with our services. It's also the perfect place to stay informed about any upcoming changes or special offers that might interest you. Remember, managing your subscription is key to getting the most out of our offerings, and we're committed to making that process as straightforward and user-friendly as possible.",
-                          style: TextStyle(color: Color(0xffffff00)),
+                          "Your payment will include your account, and your subscription will be automatically renewed unless canceled at least 24 hours before the current period ends. You can control your subscriptions in the Account Settings after making a purchase",
+
+                          style: TextStyle(color: Colors.white,),
                         ),
                         const SizedBox(
                           height: 50,
@@ -133,9 +134,9 @@ class _PremiumPageState extends State<PremiumPage> {
                         children: [
                           AppTitleText(
                             textAlign: TextAlign.center,
-                            color: Color(0xffffff00),
+                            color: Colors.white,
                             text:
-                                'Technical issues are present. Service restoration is imminent. Kindly attempt access later',
+                                '',
                           )
                         ],
                       ),
@@ -146,7 +147,7 @@ class _PremiumPageState extends State<PremiumPage> {
                           horizontal: 10, vertical: 30),
                       text: Strings.getPremiumNow,
                       textColor: Colors.white,
-                      backgroundColor: Colors.brown,
+                      backgroundColor: Colors.blueAccent,
                       onPressed: () async {
                         await context.read<AppCubit>().subscribe();
                       },
@@ -183,7 +184,8 @@ class _PremiumPageState extends State<PremiumPage> {
               context.read<AppCubit>().setSubscription(e);
             },
             child: Container(
-               padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),  
+              width: MediaQuery.of(context).size.width/1.1,
+               padding:  EdgeInsets.symmetric(horizontal:12, vertical: 10),  
               decoration: BoxDecoration(
                
                   color: Colors.white.withOpacity(0.5),
@@ -203,43 +205,50 @@ class _PremiumPageState extends State<PremiumPage> {
                           ? const Color(0xffffff00)
                           : Colors.transparent)),
               child: Row(
-                mainAxisAlignment: MainAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  const SizedBox(
-                    width: 10,
-                  ),
-                  Assets.images.crown.image(height: 30),
-                  const SizedBox(
-                    width: 5,
-                  ),
-                  state.selectedSubscription?.id == e.id
-                      ? Text('${e.title.split('(').firstOrNull ?? ''}',
-                          style: const TextStyle(
-                              color: Color(0xffffff00), fontSize: 15))
-                      : Align(
-                          child: Text(
-                            e.title.split('(').firstOrNull ?? '',
-                            style: const TextStyle(
-                              fontSize: 15,
-                              color: Colors.white,
+                 
+                  Row(
+                    children: [
+                      Assets.images.crown.image(height: 30),
+                                      
+                             SizedBox(width: 8,),          
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                             state.selectedSubscription?.id == e.id
+                          ? Text('${e.title.split('(').firstOrNull ?? ''}',
+                              style: const TextStyle(
+                                  color: Color(0xffffff00), fontSize: 15))
+                          : Align(
+                              child: Text(
+                                e.title.split('(').firstOrNull ?? '',
+                                style: const TextStyle(
+                                  fontSize: 15,
+                                  color: Colors.white,
+                                ),
+                              ),
                             ),
-                          ),
-                        ),
-                  const SizedBox(width: 10),
-                  state.selectedSubscription?.id == e.id
-                      ? Text('${e.price}',
-                          style: const TextStyle(
-                            color: Color(0xffffff00),
-                            fontSize: 20,
-                          ))
-                      : Text(
-                          ' ${e.price}',
-                          style: const TextStyle(
-                            fontSize: 20,
-                            color: AppColors.primary,
-                          ),
-                        ),
-                  const SizedBox(width: 5),
+                          
+                      state.selectedSubscription?.id == e.id
+                          ? Text('${e.price}',
+                              style: const TextStyle(
+                                color: Color(0xffffff00),
+                                fontSize: 20,
+                              ))
+                          : Text(
+                              ' ${e.price}',
+                              style: const TextStyle(
+                                fontSize: 20,
+                                color: AppColors.primary,
+                              ),
+                            ),
+                        ],
+                      ),
+                    ],
+                  ),
+                  
+     
                   state.selectedSubscription?.id == e.id ? const Icon(Icons.adjust, color: Color(0xffffff00),) :
                   Icon(
                           Icons.radio_button_unchecked,

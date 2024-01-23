@@ -9,7 +9,6 @@ import 'package:openvpn/presentations/bloc/app_cubit.dart';
 import 'package:openvpn/presentations/bloc/app_state.dart';
 import 'package:openvpn/presentations/widget/impl/app_body_text.dart';
 import 'package:openvpn/presentations/widget/impl/app_title_text.dart';
-import 'package:openvpn/resources/assets.gen.dart';
 import 'package:openvpn/utils/extension/date_extension.dart';
 
 class HistoryPage extends StatefulWidget {
@@ -36,11 +35,11 @@ class _HistoryPageState extends State<HistoryPage> {
   Widget build(BuildContext context) {
     bool isHistoryNotEmpty = false;
     return Scaffold(
-      backgroundColor: Color(0xff1c1d21),
+      backgroundColor: const Color(0xff1c1d21),
       appBar: AppBar(
       leading:  TextButton(
             child: isHistoryNotEmpty == true
-                ? SizedBox()
+                ? const SizedBox()
                 : const Icon(Icons.delete, color: Colors.white),
             onPressed: () {
               if (isHistoryNotEmpty == true) {
@@ -58,7 +57,7 @@ class _HistoryPageState extends State<HistoryPage> {
           color: Colors.white,
         ),
         actions: [
-         
+          
         ],
       ),
       body: Container(
@@ -81,7 +80,7 @@ class _HistoryPageState extends State<HistoryPage> {
                       SizedBox(height: 16),
                       Align(
                         child: AppBodyText(
-                          text: "Nothing in history",
+                          text: "Nothing",
                           size: 20,
                           textAlign: TextAlign.center,
                         ),
@@ -123,97 +122,42 @@ class _HistoryPageState extends State<HistoryPage> {
     return showCupertinoDialog(
       context: context,
       builder: (context) {
-        return Container(
-          decoration: const BoxDecoration(
-            borderRadius: BorderRadius.all(Radius.circular(20)),
-            color: Colors.white,
+        return CupertinoAlertDialog(
+          
+          title: const Text(
+             'Delete All history',
           ),
-          margin: const EdgeInsets.symmetric(vertical: 320, horizontal: 40),
-      
-          child: Column(children: [
-            SizedBox(
-              height: 10,
-            ),
-            const Text(
-              'Delete History',
-            ),
+          content: const Text(
            
-            const Text(
-              'Do you want delete all history?',
+                'Do you want to delete all?',
+          ),
+          actions: [
+            TextButton(
+              onPressed: () {
+                Navigator.of(context).pop();
+              },
+              child: const Text('Cancel', style: TextStyle(fontSize: 14, color: Colors.black),)
             ),
-            const SizedBox(
-              height: 4,
-            ),
-            Spacer(),
-            Column(
-              
-              children: [
-               
+            TextButton(
+              onPressed: () {
+              getIt<AppDatabase>().deleteAllHistories((){
+                    _refreshListView();
+                  if (!context.mounted) return;
+                  // Navigator.of(context).popUntil((route) => route.isFirst);
+                  EasyLoading.showToast('All History connection is deleted');
+                  // Future.delayed(Duration(seconds: 2), () {
+                  //   setState(() {
+                  //     //return _refreshListView();
+                  //   });
+                  // });
+                  context.read<AppCubit>().fetchHistoryList();
+                  Navigator.pop(context);
+                });
                 
-                Container(
-width: double.infinity,
-margin: EdgeInsets.symmetric(horizontal: 10),
-                  padding:
-                      const EdgeInsets.symmetric(horizontal: 20, vertical: 4),
-                  decoration: const BoxDecoration(
-                      borderRadius: BorderRadius.all(Radius.circular(5)),
-                      color: Colors.red),
-                  child: GestureDetector(
-                      onTap: () {
-                        getIt<AppDatabase>().deleteAllHistories(() {
-                          _refreshListView();
-                          if (!context.mounted) return;
-                          // Navigator.of(context).popUntil((route) => route.isFirst);
-                          EasyLoading.showToast(
-                              'All History connection is deleted');
-                          // Future.delayed(Duration(seconds: 2), () {
-                          //   setState(() {
-                          //     //return _refreshListView();
-                          //   });
-                          // });
-                          context.read<AppCubit>().fetchHistoryList();
-                          Navigator.pop(context);
-                        });
-                      },
-                      child: Align(
-                        child: const Text(
-                          'Delete',
-                          style: TextStyle(fontSize: 14, color: Colors.black, ),
-                          textAlign: TextAlign.center,
-                        ),
-                      )),
-                ),
-                SizedBox(
-                  height: 10,
-                ),
-                 Container(
-                  width: double.infinity,
-               margin: EdgeInsets.symmetric(horizontal: 10),
-                  padding:
-                      const EdgeInsets.symmetric(horizontal: 20, vertical: 4),
-                  decoration: BoxDecoration(
-                      borderRadius: BorderRadius.all(Radius.circular(5)),
-                      border: Border.all(width: 1, color: Colors.black),
-                      color: Colors.transparent),
-                  child: Container(
-                    child: GestureDetector(
-                        onTap: () {
-                          Navigator.of(context).pop();
-                        },
-                        child: Align(
-                          child: const Text(
-                            'Cancel',
-                            style: TextStyle(fontSize: 14, color: Colors.black),
-                          ),
-                        )),
-                  ),
-                ),
-              ],
+              },
+              child: const Text('Delete' , style: TextStyle( fontSize: 14, color: Colors.black),)
             ),
-            SizedBox(
-              height: 20,
-            )
-          ]),
+          ],
         );
       },
     );
@@ -222,7 +166,7 @@ margin: EdgeInsets.symmetric(horizontal: 10),
   Widget _buildHistoryItem(HistoryModel history) {
     final server = history.vpnServerModel;
     return Container(
-      padding: EdgeInsets.symmetric(vertical: 10, horizontal: 10),
+      padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
       margin: const EdgeInsets.symmetric(horizontal: 5, vertical: 10),
       decoration: BoxDecoration(
         borderRadius: const BorderRadius.all(Radius.circular(15)),
@@ -233,7 +177,7 @@ margin: EdgeInsets.symmetric(horizontal: 10),
         children: [
           SizedBox(
             child: Container(
-              decoration: BoxDecoration(),
+              decoration: const BoxDecoration(),
               child: Image.asset(
                 fit: BoxFit.cover,
                 server.flag,
@@ -259,7 +203,7 @@ margin: EdgeInsets.symmetric(horizontal: 10),
             size: 12,
             color: Colors.white,
           ),
-          SizedBox(
+          const SizedBox(
             width: 10,
           ),
           // GestureDetector(

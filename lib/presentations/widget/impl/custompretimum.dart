@@ -15,11 +15,8 @@ class _CustomPretimumState extends State<CustomPretimum> {
     return Row(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Container(
-          margin: EdgeInsets.only(top: 5),
-          child: Icon(Icons.circle_rounded, size: 10, color: Colors.white,)),
-        const SizedBox(width: 5,),
-        Container( child: Text( '${widget.text}', style: const TextStyle(color: Color(0xffffff00)),)),
+        
+        Container( margin: EdgeInsets.symmetric(horizontal: 15), child: Text( '+  ${widget.text}', style: const TextStyle(color: Colors.white,),)),
         
         
         

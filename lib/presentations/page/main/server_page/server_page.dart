@@ -47,10 +47,10 @@ class _ServerPageState extends State<ServerPage> {
                     appBar: AppBar(
                       leading: TextButton(onPressed: () {
                         Navigator.pop(context);
-                      }, child: const Icon(Icons.arrow_back_ios_new_rounded, color: Color(0xffffff00),),),
+                      }, child: const Icon(Icons.arrow_back_ios_new_rounded, color: Colors.white,),),
                       title: const Text(
                         'All server',
-                        style: TextStyle(color: Color(0xffffff00)),
+                        style: TextStyle(color: Colors.white),
                       ),
                       centerTitle: true,
                       // bottom: const TabBar(

@@ -9,11 +9,11 @@ class Strings {
   //PremiumPage
   static const String upgradePremium = 'Switch to Premium Plan';
   static const String benefitsOfThePremium =
-      'No ads, global reach,\n fast stability... :';
-  static const String removeAds = 'Experience continuous moments, ad-free.';
-  static const String unlockAllPremium = 'Fully unleash your power, explore every aspect.';
-  static const String superFastServer = 'Enjoy lightning-fast speed \n with our premium servers.';
-  static const String customerSupport = 'We are always here for you,\n providing non-stop 24/7 customer support.';
+      'Spartan VPN Premium';
+  static const String removeAds = 'Eliminate advertisements';
+  static const String unlockAllPremium = 'Explore everything';
+  static const String superFastServer = 'Ultra-speedy servers';
+  static const String customerSupport = '24/7 customer assistance';
   static const String getPremiumNow = 'Try for Free & Subscribe';
 
   //ShopPage
